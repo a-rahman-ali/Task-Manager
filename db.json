@@ -1,0 +1,66 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "User1",
+      "email": "user1@emi.com",
+      "password": "User@123"
+    },
+    {
+      "id": 2,
+      "name": "User2",
+      "email": "user2@emi.com",
+      "password": "User@123"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "task_name": "code by user1 modified",
+      "completionStatus": false,
+      "category": "work",
+      "dueDate": "2023-12-01",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "task_name": "eat by user1 modified",
+      "completionStatus": false,
+      "category": "personal",
+      "dueDate": "2023-02-01",
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "task_name": "buy formals user1 mod",
+      "completionStatus": false,
+      "category": "shopping",
+      "dueDate": "2024-01-01",
+      "userId": 1
+    },
+    {
+      "id": 4,
+      "task_name": "run by user1 mod",
+      "completionStatus": true,
+      "category": "others",
+      "dueDate": "2023-12-29",
+      "userId": 1
+    },
+    {
+      "id": 5,
+      "task_name": "code by user2 mod",
+      "completionStatus": true,
+      "category": "work",
+      "dueDate": "2023-12-12",
+      "userId": 2
+    },
+    {
+      "id": 6,
+      "task_name": "gym",
+      "completionStatus": true,
+      "category": "personal",
+      "dueDate": "2023-12-25",
+      "userId": 1
+    }
+  ]
+}

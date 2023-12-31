@@ -1,0 +1,27 @@
+.completed-task {
+  text-decoration: line-through;
+}
+
+ul.list-group {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.list-group li {
+  border-top: 1px solid #dee2e6;
+}
+
+ul.list-group li span {
+  display: inline-block;
+}
+
+.vertical-divider {
+  border-left: 1px solid #dee2e6;
+  height: 100%;
+}
+
+.table-container {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 0.25rem;
+}

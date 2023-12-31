@@ -1,0 +1,112 @@
+<div class="container-fluid">
+  <div class="row mt-3">
+    <!-- Left Section: Filter Options -->
+    <section class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <span class="btn btn-secondary text-white">
+              Filter Options
+            </span>
+          </h5>
+          <div class="card">
+            <div class="card-body">
+      
+              <!-- Filter by Category -->
+              <div class="form-group">
+                <label>Filter by Category:</label>
+                <select class="form-control" (change)="filterTasksByCategory($event)">
+                  <option value="">All</option>
+                  <option value="work">Work</option>
+                  <option value="personal">Personal</option>
+                  <option value="shopping">Shopping</option>
+                </select>
+              </div>
+      
+              <!-- Sort by Date -->
+              <div class="form-group">
+                <label>Sort by Date:</label>
+                <div>
+                  <button class="btn btn-primary me-2" (click)="sortTasksByDate('asc')">
+                    Ascending <i class="bi bi-arrow-up"></i>
+                  </button>
+                  <button class="btn btn-primary" (click)="sortTasksByDate('desc')">
+                    Descending <i class="bi bi-arrow-down"></i>
+                  </button>
+                </div>
+              </div>
+      
+              <!-- Filter by Completion Status -->
+              <div class="form-group">
+                <label>Filter by Completion Status:</label>
+                <select class="form-control" (change)="filterTasksByCompletionStatus($event)">
+                  <option value="">All</option>
+                  <option value="true">Completed</option>
+                  <option value="false">Incomplete</option>
+                </select>
+              </div>
+      
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Right Section: Display Filtered Tasks -->
+    <section class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <span class="btn btn-outline-success">
+              Filtered and Sorted Tasks
+            </span>
+          </h5>
+          <div class="table-container">
+            <table class="table">
+              <div class="col">
+                <div class="col-md-8">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        Filtered and Sorted Tasks
+                      </h5>
+                      <div class="table-container">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>Task Name</th>
+                              <th>Completion Status</th>
+                              <th>Due Date</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let task of filteredTasks" [ngClass]="{'table-success': task.completionStatus}">
+                              <td class="mb-2">
+                                <!-- Display task details as needed -->
+                                <span>
+                                  {{ task.task_name }}
+                                </span>
+                              </td>
+                              <td class="mb-2">
+                                {{ task.completionStatus ? 'Completed' : 'Incomplete' }}
+                              </td>
+                              <td class="mb-2">
+                                {{ task.dueDate | date:'dd-MMM-yyyy' }}
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>

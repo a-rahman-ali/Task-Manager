@@ -1,0 +1,31 @@
+<div class="container-fluid custom-card-1">
+  <div class="card custom-card">
+    <div class="card-body">
+      <h3 class="card-title">Edit Task</h3>
+      <div class="form-group">
+        <label for="title">Task Name:</label>
+        <input type="text" class="form-control" id="title" [(ngModel)]="task.task_name" />
+      </div>
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <input type="text" class="form-control" id="category" [(ngModel)]="task.category" />
+      </div>
+      <div class="form-group">
+        <label for="dueDate">Due Date:</label>
+        <input type="date" class="form-control" id="dueDate" [(ngModel)]="task.dueDate" />
+      </div>
+      <div class="form-group">
+        <label>Completion Status:</label>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" id="completed" [(ngModel)]="task.completionStatus" [value]="true" />
+          <label class="form-check-label" for="completed">Completed</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" id="incomplete" [(ngModel)]="task.completionStatus" [value]="false" />
+          <label class="form-check-label" for="incomplete">Incomplete</label>
+        </div>
+      </div>
+      <button class="btn btn-primary" (click)="updateTask()">Update Task</button>
+    </div>
+  </div>
+</div>

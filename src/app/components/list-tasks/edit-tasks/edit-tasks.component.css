@@ -1,0 +1,8 @@
+.custom-card{
+    margin-top: 50px;
+}
+.custom-card-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

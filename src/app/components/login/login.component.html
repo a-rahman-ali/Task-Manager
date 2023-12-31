@@ -1,0 +1,35 @@
+<div *ngIf="!authService.isAuthenticated()">
+  <div class="container-fluid">
+      <div class="login-form">
+        <form class="form-login" style="width: 500px;">
+          <h3> <span class="bi bi-person-fill text-danger"></span> User Login</h3>
+          <dl>
+            <dt>Email ID</dt>
+            <dd>
+              <input type="text" class="form-control" (input)="handleEmailInput($event)" (focus)="emailTouched = true" placeholder="Enter your email" />
+              <div *ngIf="emailTouched && !validateEmail(user.email)" class="text-danger">
+                Invalid username format.
+              </div>
+            </dd>
+            <dt>Password</dt>
+            <dd>
+              <input type="password" class="form-control" (input)="handlePasswordInput($event)" (focus)="passwordTouched = true" placeholder="Enter your password" required/>
+              <div *ngIf="passwordTouched && !validatePassword(user.password)" class="text-danger">
+                Required password of length atleast 8 letters with one uppercase, lowercase, numeric and special characters
+              </div>
+            </dd>
+          </dl>
+          <button class="btn btn-primary w-50" style="margin-left: 24%;" (click)="login($event)" [disabled]="!isValidCredentials()">Login</button>
+        </form>
+      </div>
+      <div *ngIf="invalidCredentials" class="text-danger mt-2 login-form">
+          <h4>Invalid Credentials.</h4>
+      </div>
+  </div>
+  <div class="signup">
+      <h4>If new user, please register </h4>
+      <a routerLink="/register" style="font-size: large; font-weight: bold; margin-left: 5px; color: red;">Sign Up</a>
+  </div>
+</div>
+  
+  

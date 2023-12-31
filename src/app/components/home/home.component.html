@@ -1,0 +1,11 @@
+<div *ngIf="authService.isAuthenticated()" class="container-fluid home-component ">
+    <h2 *ngIf="authService.isAuthenticated()" class="mt-3 bg-dark text-white p-3 ">
+        <span class="bi bi-bookmark-fill"></span> Manage Your Tasks : {{ authService.getCurrentUser()?.name }}
+    </h2>
+    <div class="heading">
+        <h3><span class="bi bi-caret-right-fill"></span> This is the application developed by using Angular <br></h3>
+        <h3><span class="bi bi-caret-right-fill"></span> It doesn't have any database connected <br></h3>
+        <h3><span class="bi bi-caret-right-fill"></span> I've faked the API endpoint using JSON server <br></h3>
+        <h3><span class="bi bi-caret-right-fill"></span> This application helps you manage your tasks and improve your Productivity</h3>
+    </div>
+</div>

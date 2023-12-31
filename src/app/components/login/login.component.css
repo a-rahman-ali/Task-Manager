@@ -1,0 +1,18 @@
+.login-form{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signup{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    border: solid 1px gray;
+    box-shadow: 2px 2px 3px gray;
+    padding: 20px;
+    border-radius: 10px;
+}

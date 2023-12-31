@@ -1,0 +1,39 @@
+<div class="container-fluid custom-card-1">
+  <div class="card custom-card">
+    <div class="card-body">
+      <h3 class="card-title">Add Task</h3>
+      <div class="form-group">
+        <label for="title">Name:</label>
+        <input type="text" class="form-control" id="title" [value]="newTask.task_name" (input)="updateTaskTitle($event)" />
+      </div>
+      <div *ngIf="!validTaskName()" class="text-danger">Name Required </div>
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <select class="form-control" id="category" [value]="newTask.category" (change)="updateTaskCategory($event)">
+          <option value="work">Work</option>
+          <option value="personal">Personal</option>
+          <option value="shopping">Shopping</option>
+          <option value="others">Others</option>
+        </select>
+      </div>
+      <div *ngIf="!validTaskCategory()" class="text-danger">Please Choose Category</div>
+      <div class="form-group">
+        <label for="dueDate">Due Date:</label>
+        <input type="date" class="form-control" id="dueDate" [value]="newTask.dueDate" (change)="updateTaskDueDate($event)" />
+      </div>
+      <div *ngIf="!validDueDate()" class="text-danger">Please pick the date</div>
+      <div class="form-group">
+        <label>Completion Status:</label>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" id="completed" [checked]="newTask.completionStatus === true" (change)="updateTaskCompletionStatus(true)" />
+          <label class="form-check-label" for="completed">Completed</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" id="incomplete" [checked]="newTask.completionStatus === false" (change)="updateTaskCompletionStatus(false)" />
+          <label class="form-check-label" for="incomplete">Incomplete</label>
+        </div>
+      </div>
+      <button class="btn btn-primary" (click)="addTask()">Add Task</button>
+    </div>
+  </div>
+</div>

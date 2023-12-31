@@ -1,0 +1,43 @@
+<div class="container-fluid" style="max-width: 400px; margin: 0 auto;">
+  <div *ngIf="showSuccessMessage" class="btn btn-success" style="display: flex; justify-content: center;">
+    Registered successfully!
+  </div>
+  <form class="register-form">
+    <h3><span class="bi bi-person-plus-fill"></span> User Registration</h3>
+    <dl>
+      <dt>Name</dt>
+      <dd>
+        <input type="text" required="true" class="form-control" (input)="updateName($event)"
+          placeholder="Enter your name" />
+        <div *ngIf="!user.name.trim()" class="text-danger">
+          Name is required.
+        </div>
+      </dd>
+      <dt>Email</dt>
+      <dd>
+        <input class="form-control" type="text" (input)="updateEmail($event)" placeholder="Enter your email"
+          [class.is-invalid]="!isValidEmailFormat(user.email) || registeredEmail" />
+        <div *ngIf="!isValidEmailFormat(user.email)" class="text-danger">
+          Invalid email format.
+        </div>
+        <div *ngIf="registeredEmail" class="text-danger">
+          Email is already registered.
+        </div>
+      </dd>
+      <dt>Password</dt>
+      <dd>
+        <input type="password" class="form-control" (input)="updatePassword($event)" placeholder="Enter your password"
+          [class.is-invalid]="!isValidPasswordFormat(user.password)" />
+        <div *ngIf="!isValidPasswordFormat(user.password)" class="text-danger">
+          Required password of length atleast 8 letters with one uppercase, lowercase, numeric and special characters
+        </div>
+      </dd>
+    </dl>
+    <button class="btn btn-primary w-100" (click)="register($event)">Register</button>
+  </form>
+  <div style="display: flex; justify-content: center;">
+    <a routerLink="/login">
+      <button class="btn btn-primary mt-3">Back to Login</button>
+    </a>
+  </div>
+</div>

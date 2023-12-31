@@ -1,0 +1,26 @@
+<div class="table-responsive mt-3">
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark">
+      <tr class="bg-dark">
+        <th class="text-white p-3 m-3">Task Name</th>
+        <th class="text-white p-3 m-3">Category</th>
+        <th class="text-white p-3 m-3">Status</th>
+        <th class="text-white p-3 m-3">Due Date</th>
+        <th class="text-white p-3 m-3">Edit/Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{ task.task_name }}</td>
+        <td>{{ task.category }}</td>
+        <td>{{ task.completionStatus ? 'Completed' : 'Incomplete' }}</td>
+        <td>{{ task.dueDate | date:'dd-MMM-yyyy' }}</td>
+        <td>
+          <button class="btn btn-success ms-4 me-2" (click)="openEditForm(task.id)">Edit</button>
+          <button class="btn btn-danger ms-4" (click)="deleteTask(task.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<router-outlet></router-outlet>

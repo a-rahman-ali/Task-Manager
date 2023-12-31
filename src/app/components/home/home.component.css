@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-decoration-break: none;
+}
+li{
+    box-decoration-break: none;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-left: 20px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+button{
+    background-color: rgb(61, 60, 60);
+    width: 150px;
+    padding: 3px;
+    border: none;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+.active{
+    background-color: black;
+}
+h3{
+    padding: 25px;
+    background-color: rgb(173, 173, 173);
+    margin-right: 2%;
+}
+.heading{
+    width: 1200px;
+    height: 150px;
+    margin-top: 3%;
+    margin-left: 4%;
+}
+.heading h3{
+    background-color: rgba(67, 166, 231, 0.3);
+    color: black;
+}
