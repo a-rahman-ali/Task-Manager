@@ -8,7 +8,8 @@ import { ITask } from '../../app/models/ITask';
   providedIn: 'root',
 })
 export class TaskService {
-  private apiUrl = 'http://localhost:3000/tasks';
+  // private apiUrl = 'http://localhost:3000/tasks';
+  private apiUrl = '/api/tasks';
   taskUpdated: EventEmitter<ITask> = new EventEmitter<ITask>();
 
 

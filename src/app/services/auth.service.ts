@@ -7,7 +7,8 @@ import { Observable, map } from 'rxjs';
 })
 export class AuthService {
   // Adjust the URL based on your JSON server endpoint
-  private apiUrl = 'http://localhost:3000/'; 
+  // private apiUrl = 'http://localhost:3000/'; 
+  private apiUrl = '/api/'; 
   private isAuthenticatedValue = false;
   currentUser: any;
 
